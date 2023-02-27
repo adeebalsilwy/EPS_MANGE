@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10de54b578a8477dbcdb0e3c55ed41e1" Name="Diagram1">
+        <EntityTypeShape EntityType="DBEPSModel.TB_Categories" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Groups" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Users" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="DBEPSModel.FK_TB_Categories_TB_Groups" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Note" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_SystemLogs" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Suppliers" Width="1.5" PointX="5.375" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Buy" Width="1.5" PointX="7.625" PointY="1" />
+        <AssociationConnector Association="DBEPSModel.FK_TB_Buy_TB_Categories" />
+        <AssociationConnector Association="DBEPSModel.FK_TB_Buy_TB_Suppliers" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Customers" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Sell" Width="1.5" PointX="5.625" PointY="7.5" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_SellData" Width="1.5" PointX="7.875" PointY="7.5" />
+        <AssociationConnector Association="DBEPSModel.FK_TB_Sell_TB_Customers" />
+        <AssociationConnector Association="DBEPSModel.FK_TB_SellData_TB_Sell" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_ABC" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Pyments" Width="1.5" PointX="10.375" PointY="0.75" />
+        <AssociationConnector Association="DBEPSModel.FK_TB_Pyments_TB_Sell" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_CustomerPaymentLogs" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_Paymentsbuy" Width="1.5" PointX="9.875" PointY="11.875" />
+        <AssociationConnector Association="DBEPSModel.FK_TB_Paymentsbuy_TB_Buy" />
+        <EntityTypeShape EntityType="DBEPSModel.TB_SuppliersPayments" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DBEPSModel.TBL_ACTIVE" Width="1.5" PointX="12.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

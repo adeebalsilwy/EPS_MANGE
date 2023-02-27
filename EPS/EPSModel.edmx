@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBEPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TB_ABC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A" Type="varbinary(max)" />
+          <Property Name="B" Type="varbinary(max)" />
+          <Property Name="C" Type="varbinary(max)" />
+          <Property Name="D" Type="varbinary(max)" />
+          <Property Name="E" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TB_Buy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Catgeory" Type="int" />
+          <Property Name="ID_Supplier" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="Supplier" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="float" />
+          <Property Name="BarcodeValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="BarcodeImage" Type="varbinary(max)" />
+          <Property Name="CashSellPrimary" Type="float" />
+          <Property Name="CashSellSecondry" Type="float" />
+          <Property Name="BuyPrimary" Type="float" />
+          <Property Name="BuySecondry" Type="float" />
+          <Property Name="SupplierPyment" Type="float" />
+          <Property Name="BuyAllValue" Type="float" />
+          <Property Name="SellAllValue" Type="float" />
+          <Property Name="Benfit" Type="float" />
+          <Property Name="Cover" Type="varbinary(max)" />
+          <Property Name="DateAdd" Type="datetime" />
+          <Property Name="CreditSellPrimary" Type="float" />
+          <Property Name="CreditSellSecondry" Type="float" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="SupplierPyment1" Type="float" />
+        </EntityType>
+        <EntityType Name="TB_Categories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDGroups" Type="int" />
+          <Property Name="CatName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatDes" Type="nvarchar(max)" />
+          <Property Name="CatQuantity" Type="float" />
+          <Property Name="CatDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TB_CustomerPaymentLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="SellID" Type="int" />
+          <Property Name="Pamnent" Type="float" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="colone" Type="float" />
+          <Property Name="coltow" Type="nvarchar" MaxLength="50" />
+          <Property Name="colthreee" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="SupplierBalance" Type="float" />
+          <Property Name="SupplierPhone" Type="float" />
+          <Property Name="SupplierAddress" Type="nvarchar(max)" />
+          <Property Name="SupplierDate" Type="datetime" />
+          <Property Name="SupplierBalanceprim" Type="float" />
+        </EntityType>
+        <EntityType Name="TB_Groups">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="GroupDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TB_Note">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NoteDes" Type="nvarchar(max)" />
+          <Property Name="NoteDate" Type="datetime" />
+          <Property Name="NoteManger" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoteUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoteType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_Paymentsbuy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDSELL" Type="int" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Paymentone" Type="float" />
+          <Property Name="Paymenttwo" Type="float" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="CurrentPaymentone" Type="float" />
+          <Property Name="CurrentDate" Type="datetime" />
+          <Property Name="PaymentState" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddDate" Type="datetime" />
+          <Property Name="colone" Type="nvarchar" MaxLength="50" />
+          <Property Name="coltwo" Type="nvarchar" MaxLength="50" />
+          <Property Name="colthree" Type="nvarchar" MaxLength="50" />
+          <Property Name="colfour" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDCustomer" Type="int" />
+          <Property Name="SellName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Pyments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="IDSELL" Type="int" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Paymentone" Type="float" />
+          <Property Name="Paymenttwo" Type="float" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="CurrentPaymentone" Type="float" />
+          <Property Name="CurrentDate" Type="datetime" />
+          <Property Name="PaymentState" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddDate" Type="datetime" />
+          <Property Name="colone" Type="nvarchar" MaxLength="50" />
+          <Property Name="coltwo" Type="nvarchar" MaxLength="50" />
+          <Property Name="colthree" Type="nvarchar" MaxLength="50" />
+          <Property Name="colfour" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDCustomer" Type="int" />
+          <Property Name="SellName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Sell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCustomer" Type="int" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerBalance" Type="float" />
+          <Property Name="SellValue" Type="float" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="BarcodeImage" Type="varbinary(max)" />
+          <Property Name="SellMenuName" Type="nvarchar(max)" />
+          <Property Name="CustomerBalanceprim" Type="float" />
+        </EntityType>
+        <EntityType Name="TB_SellData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDSell" Type="int" />
+          <Property Name="MatrialsName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="float" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SellState" Type="nvarchar" MaxLength="50" />
+          <Property Name="SellValue" Type="float" />
+          <Property Name="SellAllValue" Type="float" />
+          <Property Name="CustomerBalance" Type="float" />
+          <Property Name="CustomerBalanceprim" Type="float" />
+        </EntityType>
+        <EntityType Name="TB_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="SupplierPhone" Type="bigint" />
+          <Property Name="SupplierAddress" Type="nvarchar(max)" />
+          <Property Name="SupplierDate" Type="datetime" />
+          <Property Name="SupplierBalance" Type="float" />
+          <Property Name="SupplierBalancePrim" Type="float" />
+        </EntityType>
+        <EntityType Name="TB_SuppliersPayments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="SellID" Type="int" />
+          <Property Name="Pamnent" Type="float" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="colone" Type="float" />
+          <Property Name="coltow" Type="nvarchar" MaxLength="50" />
+          <Property Name="colthreee" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_SystemLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogDes" Type="nvarchar(max)" />
+          <Property Name="LogDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TB_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="varbinary(max)" />
+          <Property Name="ProfileCover" Type="varbinary(max)" />
+          <Property Name="UserState" Type="int" />
+          <Property Name="privlage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_ACTIVE">
+          <Key>
+            <PropertyRef Name="MAC_ADDRESS" />
+          </Key>
+          <Property Name="MAC_ADDRESS" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ADD_DATE" Type="date" />
+          <Property Name="ACTIVE_KEY" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACTIVE_DATE" Type="date" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+        </EntityType>
+        <Association Name="FK_TB_Buy_TB_Categories">
+          <End Role="TB_Categories" Type="Self.TB_Categories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Buy" Type="Self.TB_Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Buy">
+              <PropertyRef Name="ID_Catgeory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Buy_TB_Suppliers">
+          <End Role="TB_Suppliers" Type="Self.TB_Suppliers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Buy" Type="Self.TB_Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Buy">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Categories_TB_Groups">
+          <End Role="TB_Groups" Type="Self.TB_Groups" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Categories" Type="Self.TB_Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Groups">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Categories">
+              <PropertyRef Name="IDGroups" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Paymentsbuy_TB_Buy">
+          <End Role="TB_Buy" Type="Self.TB_Buy" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Paymentsbuy" Type="Self.TB_Paymentsbuy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Buy">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Paymentsbuy">
+              <PropertyRef Name="IDSELL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Pyments_TB_Sell">
+          <End Role="TB_Sell" Type="Self.TB_Sell" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Pyments" Type="Self.TB_Pyments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Sell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Pyments">
+              <PropertyRef Name="IDSELL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Sell_TB_Customers">
+          <End Role="TB_Customers" Type="Self.TB_Customers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Sell" Type="Self.TB_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Sell">
+              <PropertyRef Name="IDCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_SellData_TB_Sell">
+          <End Role="TB_Sell" Type="Self.TB_Sell" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_SellData" Type="Self.TB_SellData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Sell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_SellData">
+              <PropertyRef Name="IDSell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEPSModelStoreContainer">
+          <EntitySet Name="TB_ABC" EntityType="Self.TB_ABC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Buy" EntityType="Self.TB_Buy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Categories" EntityType="Self.TB_Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_CustomerPaymentLogs" EntityType="Self.TB_CustomerPaymentLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Customers" EntityType="Self.TB_Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Groups" EntityType="Self.TB_Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Note" EntityType="Self.TB_Note" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Paymentsbuy" EntityType="Self.TB_Paymentsbuy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Pyments" EntityType="Self.TB_Pyments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Sell" EntityType="Self.TB_Sell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_SellData" EntityType="Self.TB_SellData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Suppliers" EntityType="Self.TB_Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_SuppliersPayments" EntityType="Self.TB_SuppliersPayments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_SystemLogs" EntityType="Self.TB_SystemLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Users" EntityType="Self.TB_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ACTIVE" EntityType="Self.TBL_ACTIVE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TB_Buy_TB_Categories" Association="Self.FK_TB_Buy_TB_Categories">
+            <End Role="TB_Categories" EntitySet="TB_Categories" />
+            <End Role="TB_Buy" EntitySet="TB_Buy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Buy_TB_Suppliers" Association="Self.FK_TB_Buy_TB_Suppliers">
+            <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+            <End Role="TB_Buy" EntitySet="TB_Buy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Categories_TB_Groups" Association="Self.FK_TB_Categories_TB_Groups">
+            <End Role="TB_Groups" EntitySet="TB_Groups" />
+            <End Role="TB_Categories" EntitySet="TB_Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Paymentsbuy_TB_Buy" Association="Self.FK_TB_Paymentsbuy_TB_Buy">
+            <End Role="TB_Buy" EntitySet="TB_Buy" />
+            <End Role="TB_Paymentsbuy" EntitySet="TB_Paymentsbuy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Pyments_TB_Sell" Association="Self.FK_TB_Pyments_TB_Sell">
+            <End Role="TB_Sell" EntitySet="TB_Sell" />
+            <End Role="TB_Pyments" EntitySet="TB_Pyments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Sell_TB_Customers" Association="Self.FK_TB_Sell_TB_Customers">
+            <End Role="TB_Customers" EntitySet="TB_Customers" />
+            <End Role="TB_Sell" EntitySet="TB_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_SellData_TB_Sell" Association="Self.FK_TB_SellData_TB_Sell">
+            <End Role="TB_Sell" EntitySet="TB_Sell" />
+            <End Role="TB_SellData" EntitySet="TB_SellData" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBEPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TB_Categories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDGroups" Type="Int32" />
+          <Property Name="CatName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatDes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CatQuantity" Type="Double" />
+          <Property Name="CatDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Groups" Relationship="Self.FK_TB_Categories_TB_Groups" FromRole="TB_Categories" ToRole="TB_Groups" />
+          <NavigationProperty Name="TB_Buy" Relationship="DBEPSModel.FK_TB_Buy_TB_Categories" FromRole="TB_Categories" ToRole="TB_Buy" />
+        </EntityType>
+        <EntityType Name="TB_Groups">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GroupDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Categories" Relationship="Self.FK_TB_Categories_TB_Groups" FromRole="TB_Groups" ToRole="TB_Categories" />
+        </EntityType>
+        <EntityType Name="TB_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProfileCover" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserState" Type="Int32" />
+          <Property Name="privlage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_TB_Categories_TB_Groups">
+          <End Role="TB_Groups" Type="Self.TB_Groups" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Categories" Type="Self.TB_Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Groups">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Categories">
+              <PropertyRef Name="IDGroups" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEPSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_Categories" EntityType="Self.TB_Categories" />
+          <EntitySet Name="TB_Groups" EntityType="Self.TB_Groups" />
+          <EntitySet Name="TB_Users" EntityType="Self.TB_Users" />
+          <AssociationSet Name="FK_TB_Categories_TB_Groups" Association="Self.FK_TB_Categories_TB_Groups">
+            <End Role="TB_Groups" EntitySet="TB_Groups" />
+            <End Role="TB_Categories" EntitySet="TB_Categories" />
+          </AssociationSet>
+          <EntitySet Name="TB_Note" EntityType="DBEPSModel.TB_Note" />
+          <EntitySet Name="TB_SystemLogs" EntityType="DBEPSModel.TB_SystemLogs" />
+          <EntitySet Name="TB_Suppliers" EntityType="DBEPSModel.TB_Suppliers" />
+          <EntitySet Name="TB_Buy" EntityType="DBEPSModel.TB_Buy" />
+          <AssociationSet Name="FK_TB_Buy_TB_Categories" Association="DBEPSModel.FK_TB_Buy_TB_Categories">
+            <End Role="TB_Categories" EntitySet="TB_Categories" />
+            <End Role="TB_Buy" EntitySet="TB_Buy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Buy_TB_Suppliers" Association="DBEPSModel.FK_TB_Buy_TB_Suppliers">
+            <End Role="TB_Suppliers" EntitySet="TB_Suppliers" />
+            <End Role="TB_Buy" EntitySet="TB_Buy" />
+          </AssociationSet>
+          <EntitySet Name="TB_Customers" EntityType="DBEPSModel.TB_Customers" />
+          <EntitySet Name="TB_Sell" EntityType="DBEPSModel.TB_Sell" />
+          <EntitySet Name="TB_SellData" EntityType="DBEPSModel.TB_SellData" />
+          <AssociationSet Name="FK_TB_Sell_TB_Customers" Association="DBEPSModel.FK_TB_Sell_TB_Customers">
+            <End Role="TB_Customers" EntitySet="TB_Customers" />
+            <End Role="TB_Sell" EntitySet="TB_Sell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_SellData_TB_Sell" Association="DBEPSModel.FK_TB_SellData_TB_Sell">
+            <End Role="TB_Sell" EntitySet="TB_Sell" />
+            <End Role="TB_SellData" EntitySet="TB_SellData" />
+          </AssociationSet>
+          <EntitySet Name="TB_ABC" EntityType="DBEPSModel.TB_ABC" />
+          <EntitySet Name="TB_Pyments" EntityType="DBEPSModel.TB_Pyments" />
+          <AssociationSet Name="FK_TB_Pyments_TB_Sell" Association="DBEPSModel.FK_TB_Pyments_TB_Sell">
+            <End Role="TB_Sell" EntitySet="TB_Sell" />
+            <End Role="TB_Pyments" EntitySet="TB_Pyments" />
+          </AssociationSet>
+          <EntitySet Name="TB_CustomerPaymentLogs" EntityType="DBEPSModel.TB_CustomerPaymentLogs" />
+          <EntitySet Name="TB_Paymentsbuy" EntityType="DBEPSModel.TB_Paymentsbuy" />
+          <AssociationSet Name="FK_TB_Paymentsbuy_TB_Buy" Association="DBEPSModel.FK_TB_Paymentsbuy_TB_Buy">
+            <End Role="TB_Buy" EntitySet="TB_Buy" />
+            <End Role="TB_Paymentsbuy" EntitySet="TB_Paymentsbuy" />
+          </AssociationSet>
+          <EntitySet Name="TB_SuppliersPayments" EntityType="DBEPSModel.TB_SuppliersPayments" />
+          <EntitySet Name="TBL_ACTIVE" EntityType="DBEPSModel.TBL_ACTIVE" />
+        </EntityContainer>
+        <EntityType Name="TB_Note">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoteDes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NoteDate" Type="DateTime" Precision="3" />
+          <Property Name="NoteManger" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoteUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoteType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_SystemLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogDes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TB_Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierPhone" Type="Int64" />
+          <Property Name="SupplierAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Buy" Relationship="DBEPSModel.FK_TB_Buy_TB_Suppliers" FromRole="TB_Suppliers" ToRole="TB_Buy" />
+          <Property Name="SupplierBalance" Type="Double" />
+          <Property Name="SupplierBalancePrim" Type="Double" />
+        </EntityType>
+        <EntityType Name="TB_Buy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Catgeory" Type="Int32" />
+          <Property Name="ID_Supplier" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Double" />
+          <Property Name="BarcodeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BarcodeImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CashSellPrimary" Type="Double" />
+          <Property Name="CashSellSecondry" Type="Double" />
+          <Property Name="BuyPrimary" Type="Double" />
+          <Property Name="BuySecondry" Type="Double" />
+          <Property Name="SupplierPyment" Type="Double" />
+          <Property Name="BuyAllValue" Type="Double" />
+          <Property Name="SellAllValue" Type="Double" />
+          <Property Name="Benfit" Type="Double" />
+          <Property Name="Cover" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateAdd" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Categories" Relationship="DBEPSModel.FK_TB_Buy_TB_Categories" FromRole="TB_Buy" ToRole="TB_Categories" />
+          <NavigationProperty Name="TB_Suppliers" Relationship="DBEPSModel.FK_TB_Buy_TB_Suppliers" FromRole="TB_Buy" ToRole="TB_Suppliers" />
+          <Property Name="CreditSellPrimary" Type="Double" />
+          <Property Name="CreditSellSecondry" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierPyment1" Type="Double" />
+          <NavigationProperty Name="TB_Paymentsbuy" Relationship="DBEPSModel.FK_TB_Paymentsbuy_TB_Buy" FromRole="TB_Buy" ToRole="TB_Paymentsbuy" />
+        </EntityType>
+        <Association Name="FK_TB_Buy_TB_Categories">
+          <End Type="DBEPSModel.TB_Categories" Role="TB_Categories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBEPSModel.TB_Buy" Role="TB_Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Buy">
+              <PropertyRef Name="ID_Catgeory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Buy_TB_Suppliers">
+          <End Type="DBEPSModel.TB_Suppliers" Role="TB_Suppliers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBEPSModel.TB_Buy" Role="TB_Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Buy">
+              <PropertyRef Name="ID_Supplier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierBalance" Type="Double" />
+          <Property Name="SupplierPhone" Type="Double" />
+          <Property Name="SupplierAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Sell" Relationship="DBEPSModel.FK_TB_Sell_TB_Customers" FromRole="TB_Customers" ToRole="TB_Sell" />
+          <Property Name="SupplierBalanceprim" Type="Double" />
+        </EntityType>
+        <EntityType Name="TB_Sell">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCustomer" Type="Int32" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerBalance" Type="Double" />
+          <Property Name="SellValue" Type="Double" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BarcodeImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TB_Customers" Relationship="DBEPSModel.FK_TB_Sell_TB_Customers" FromRole="TB_Sell" ToRole="TB_Customers" />
+          <NavigationProperty Name="TB_SellData" Relationship="DBEPSModel.FK_TB_SellData_TB_Sell" FromRole="TB_Sell" ToRole="TB_SellData" />
+          <Property Name="SellMenuName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerBalanceprim" Type="Double" />
+          <NavigationProperty Name="TB_Pyments" Relationship="DBEPSModel.FK_TB_Pyments_TB_Sell" FromRole="TB_Sell" ToRole="TB_Pyments" />
+        </EntityType>
+        <EntityType Name="TB_SellData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDSell" Type="Int32" />
+          <Property Name="MatrialsName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Double" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SellState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SellValue" Type="Double" />
+          <Property Name="SellAllValue" Type="Double" />
+          <NavigationProperty Name="TB_Sell" Relationship="DBEPSModel.FK_TB_SellData_TB_Sell" FromRole="TB_SellData" ToRole="TB_Sell" />
+          <Property Name="CustomerBalance" Type="Double" />
+          <Property Name="CustomerBalanceprim" Type="Double" />
+        </EntityType>
+        <Association Name="FK_TB_Sell_TB_Customers">
+          <End Type="DBEPSModel.TB_Customers" Role="TB_Customers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBEPSModel.TB_Sell" Role="TB_Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Sell">
+              <PropertyRef Name="IDCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_SellData_TB_Sell">
+          <End Type="DBEPSModel.TB_Sell" Role="TB_Sell" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBEPSModel.TB_SellData" Role="TB_SellData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Sell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_SellData">
+              <PropertyRef Name="IDSell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_ABC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="B" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="C" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="D" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="E" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_Pyments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="IDSELL" Type="Int32" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Paymentone" Type="Double" />
+          <Property Name="Paymenttwo" Type="Double" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="CurrentPaymentone" Type="Double" />
+          <Property Name="CurrentDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddDate" Type="DateTime" Precision="3" />
+          <Property Name="colone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="coltwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="colthree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="colfour" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDCustomer" Type="Int32" />
+          <Property Name="SellName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TB_Sell" Relationship="DBEPSModel.FK_TB_Pyments_TB_Sell" FromRole="TB_Pyments" ToRole="TB_Sell" />
+        </EntityType>
+        <Association Name="FK_TB_Pyments_TB_Sell">
+          <End Type="DBEPSModel.TB_Sell" Role="TB_Sell" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBEPSModel.TB_Pyments" Role="TB_Pyments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Sell">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Pyments">
+              <PropertyRef Name="IDSELL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_CustomerPaymentLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="SellID" Type="Int32" />
+          <Property Name="Pamnent" Type="Double" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="colone" Type="Double" />
+          <Property Name="coltow" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="colthreee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_Paymentsbuy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDSELL" Type="Int32" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Paymentone" Type="Double" />
+          <Property Name="Paymenttwo" Type="Double" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="CurrentPaymentone" Type="Double" />
+          <Property Name="CurrentDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddDate" Type="DateTime" Precision="3" />
+          <Property Name="colone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="coltwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="colthree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="colfour" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDCustomer" Type="Int32" />
+          <Property Name="SellName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TB_Buy" Relationship="DBEPSModel.FK_TB_Paymentsbuy_TB_Buy" FromRole="TB_Paymentsbuy" ToRole="TB_Buy" />
+        </EntityType>
+        <Association Name="FK_TB_Paymentsbuy_TB_Buy">
+          <End Type="DBEPSModel.TB_Buy" Role="TB_Buy" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBEPSModel.TB_Paymentsbuy" Role="TB_Paymentsbuy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Buy">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Paymentsbuy">
+              <PropertyRef Name="IDSELL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_SuppliersPayments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="SellID" Type="Int32" />
+          <Property Name="Pamnent" Type="Double" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="colone" Type="Double" />
+          <Property Name="coltow" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="colthreee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBL_ACTIVE">
+          <Key>
+            <PropertyRef Name="MAC_ADDRESS" />
+          </Key>
+          <Property Name="MAC_ADDRESS" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADD_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ACTIVE_KEY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE_DATE" Type="DateTime" Precision="0" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBEPSModelStoreContainer" CdmEntityContainer="DBEPSEntities">
+    <EntitySetMapping Name="TB_Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Categories)">
+        <MappingFragment StoreEntitySet="TB_Categories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDGroups" ColumnName="IDGroups" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="CatGroup" ColumnName="CatGroup" />
+          <ScalarProperty Name="CatDes" ColumnName="CatDes" />
+          <ScalarProperty Name="CatQuantity" ColumnName="CatQuantity" />
+          <ScalarProperty Name="CatDate" ColumnName="CatDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Groups">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Groups)">
+        <MappingFragment StoreEntitySet="TB_Groups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupDate" ColumnName="GroupDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Users">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Users)">
+        <MappingFragment StoreEntitySet="TB_Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="ProfileCover" ColumnName="ProfileCover" />
+          <ScalarProperty Name="UserState" ColumnName="UserState" />
+          <ScalarProperty Name="privlage" ColumnName="privlage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Note">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Note)">
+        <MappingFragment StoreEntitySet="TB_Note">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NoteDes" ColumnName="NoteDes" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="NoteManger" ColumnName="NoteManger" />
+          <ScalarProperty Name="NoteUser" ColumnName="NoteUser" />
+          <ScalarProperty Name="NoteType" ColumnName="NoteType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_SystemLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_SystemLogs)">
+        <MappingFragment StoreEntitySet="TB_SystemLogs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LogDes" ColumnName="LogDes" />
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Suppliers">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Suppliers)">
+        <MappingFragment StoreEntitySet="TB_Suppliers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierPhone" ColumnName="SupplierPhone" />
+          <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+          <ScalarProperty Name="SupplierDate" ColumnName="SupplierDate" />
+          <ScalarProperty Name="SupplierBalance" ColumnName="SupplierBalance" />
+          <ScalarProperty Name="SupplierBalancePrim" ColumnName="SupplierBalancePrim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Buy">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Buy)">
+        <MappingFragment StoreEntitySet="TB_Buy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_Catgeory" ColumnName="ID_Catgeory" />
+          <ScalarProperty Name="ID_Supplier" ColumnName="ID_Supplier" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="BarcodeValue" ColumnName="BarcodeValue" />
+          <ScalarProperty Name="BarcodeImage" ColumnName="BarcodeImage" />
+          <ScalarProperty Name="CashSellPrimary" ColumnName="CashSellPrimary" />
+          <ScalarProperty Name="CashSellSecondry" ColumnName="CashSellSecondry" />
+          <ScalarProperty Name="BuyPrimary" ColumnName="BuyPrimary" />
+          <ScalarProperty Name="BuySecondry" ColumnName="BuySecondry" />
+          <ScalarProperty Name="SupplierPyment" ColumnName="SupplierPyment" />
+          <ScalarProperty Name="BuyAllValue" ColumnName="BuyAllValue" />
+          <ScalarProperty Name="SellAllValue" ColumnName="SellAllValue" />
+          <ScalarProperty Name="Benfit" ColumnName="Benfit" />
+          <ScalarProperty Name="Cover" ColumnName="Cover" />
+          <ScalarProperty Name="DateAdd" ColumnName="DateAdd" />
+          <ScalarProperty Name="CreditSellPrimary" ColumnName="CreditSellPrimary" />
+          <ScalarProperty Name="CreditSellSecondry" ColumnName="CreditSellSecondry" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SupplierPyment1" ColumnName="SupplierPyment1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Customers)">
+        <MappingFragment StoreEntitySet="TB_Customers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierBalance" ColumnName="SupplierBalance" />
+          <ScalarProperty Name="SupplierPhone" ColumnName="SupplierPhone" />
+          <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+          <ScalarProperty Name="SupplierDate" ColumnName="SupplierDate" />
+          <ScalarProperty Name="SupplierBalanceprim" ColumnName="SupplierBalanceprim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Sell">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Sell)">
+        <MappingFragment StoreEntitySet="TB_Sell">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerBalance" ColumnName="CustomerBalance" />
+          <ScalarProperty Name="SellValue" ColumnName="SellValue" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="BarcodeImage" ColumnName="BarcodeImage" />
+          <ScalarProperty Name="SellMenuName" ColumnName="SellMenuName" />
+          <ScalarProperty Name="CustomerBalanceprim" ColumnName="CustomerBalanceprim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_SellData">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_SellData)">
+        <MappingFragment StoreEntitySet="TB_SellData">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDSell" ColumnName="IDSell" />
+          <ScalarProperty Name="MatrialsName" ColumnName="MatrialsName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="SellState" ColumnName="SellState" />
+          <ScalarProperty Name="SellValue" ColumnName="SellValue" />
+          <ScalarProperty Name="SellAllValue" ColumnName="SellAllValue" />
+          <ScalarProperty Name="CustomerBalance" ColumnName="CustomerBalance" />
+          <ScalarProperty Name="CustomerBalanceprim" ColumnName="CustomerBalanceprim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ABC">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_ABC)">
+        <MappingFragment StoreEntitySet="TB_ABC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="A" ColumnName="A" />
+          <ScalarProperty Name="B" ColumnName="B" />
+          <ScalarProperty Name="C" ColumnName="C" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="E" ColumnName="E" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Pyments">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Pyments)">
+        <MappingFragment StoreEntitySet="TB_Pyments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDSELL" ColumnName="IDSELL" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Paymentone" ColumnName="Paymentone" />
+          <ScalarProperty Name="Paymenttwo" ColumnName="Paymenttwo" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="CurrentPaymentone" ColumnName="CurrentPaymentone" />
+          <ScalarProperty Name="CurrentDate" ColumnName="CurrentDate" />
+          <ScalarProperty Name="PaymentState" ColumnName="PaymentState" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="colone" ColumnName="colone" />
+          <ScalarProperty Name="coltwo" ColumnName="coltwo" />
+          <ScalarProperty Name="colthree" ColumnName="colthree" />
+          <ScalarProperty Name="colfour" ColumnName="colfour" />
+          <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
+          <ScalarProperty Name="SellName" ColumnName="SellName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_CustomerPaymentLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_CustomerPaymentLogs)">
+        <MappingFragment StoreEntitySet="TB_CustomerPaymentLogs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="SellID" ColumnName="SellID" />
+          <ScalarProperty Name="Pamnent" ColumnName="Pamnent" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="colone" ColumnName="colone" />
+          <ScalarProperty Name="coltow" ColumnName="coltow" />
+          <ScalarProperty Name="colthreee" ColumnName="colthreee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Paymentsbuy">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_Paymentsbuy)">
+        <MappingFragment StoreEntitySet="TB_Paymentsbuy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDSELL" ColumnName="IDSELL" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Paymentone" ColumnName="Paymentone" />
+          <ScalarProperty Name="Paymenttwo" ColumnName="Paymenttwo" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="CurrentPaymentone" ColumnName="CurrentPaymentone" />
+          <ScalarProperty Name="CurrentDate" ColumnName="CurrentDate" />
+          <ScalarProperty Name="PaymentState" ColumnName="PaymentState" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="colone" ColumnName="colone" />
+          <ScalarProperty Name="coltwo" ColumnName="coltwo" />
+          <ScalarProperty Name="colthree" ColumnName="colthree" />
+          <ScalarProperty Name="colfour" ColumnName="colfour" />
+          <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
+          <ScalarProperty Name="SellName" ColumnName="SellName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_SuppliersPayments">
+      <EntityTypeMapping TypeName="IsTypeOf(DBEPSModel.TB_SuppliersPayments)">
+        <MappingFragment StoreEntitySet="TB_SuppliersPayments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="SellID" ColumnName="SellID" />
+          <ScalarProperty Name="Pamnent" ColumnName="Pamnent" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="colone" ColumnName="colone" />
+          <ScalarProperty Name="coltow" ColumnName="coltow" />
+          <ScalarProperty Name="colthreee" ColumnName="colthreee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ACTIVE">
+            <EntityTypeMapping TypeName="DBEPSModel.TBL_ACTIVE">
+              <MappingFragment StoreEntitySet="TBL_ACTIVE">
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="ACTIVE_DATE" ColumnName="ACTIVE_DATE" />
+                <ScalarProperty Name="ACTIVE_KEY" ColumnName="ACTIVE_KEY" />
+                <ScalarProperty Name="ADD_DATE" ColumnName="ADD_DATE" />
+                <ScalarProperty Name="MAC_ADDRESS" ColumnName="MAC_ADDRESS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
